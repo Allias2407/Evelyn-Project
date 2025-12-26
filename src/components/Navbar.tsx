@@ -12,17 +12,17 @@ import {Link} from 'react-router-dom';
 const navItems = [
   {
     name: "Home",
-    link: "",
+    link: "/",
     icon: <House className="inline mb-1" />,
   },
   {
     name: "About",
-    link: "about",
+    link: "/about",
     icon: <UserRoundSearch className="inline mb-1" />,
   },
   {
     name: "Work Overview",
-    link: "work",
+    link: "/work",
     icon: <BriefcaseBusiness className="inline mb-1" />,
   },
   {
@@ -33,12 +33,12 @@ const navItems = [
 ];
 
 const workSubNavItems = [
-  { name: "Rebirth Project", link: "rebirth-project" },
+  { name: "Rebirth Project", link: "/rebirth-project" },
   {
     name: "RMIT Vietnam Student Council Hanoi",
-    link: "schnoi",
+    link: "/schnoi",
   },
-  { name: "Suniverse", link: "suniverse" },
+  { name: "Suniverse", link: "/suniverse" },
 ];
 
 export default function Navbar() {
@@ -166,9 +166,9 @@ useEffect(() => {
           }
 
           return (
-            <a
+            <Link
               key={item.name}
-              href={item.link}
+              to={item.link}
               title={collapsed ? item.name : undefined}
               className={`flex items-center gap-3 rounded-md px-3 py-3 card-hover ${
                 isActive(item.link)
@@ -189,7 +189,7 @@ useEffect(() => {
               >
                 {item.name}
               </span>
-            </a>
+            </Link>
           );
         })}
       </nav>

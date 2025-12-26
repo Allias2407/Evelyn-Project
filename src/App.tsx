@@ -11,16 +11,16 @@ function App() {
     <>
       <BrowserRouter basename="/Evelyn-Project/">
         <Routes>
-          <Route index path="/Evelyn-Project/" element={<Home />} />
-          <Route path="/Evelyn-Project/about" element={<About />} />
-          <Route path="/Evelyn-Project/work" element={<Work />} />
+          <Route index path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
           {/* work  */}
           <Route
-            path="/Evelyn-Project/rebirth-project"
+            path="/rebirth-project"
             element={<WorkRebirthProject />}
           />
-          <Route path="/Evelyn-Project/schnoi" element={<WorkScHnoi />} />
-          <Route path="/Evelyn-Project/suniverse" element={<WorkSuniverse url = "https://www.instagram.com/reel/C5n58jzSwSn/" />} />
+          <Route path="/schnoi" element={<WorkScHnoi />} />
+          <Route path="/suniverse" element={<WorkSuniverse url = "https://www.instagram.com/reel/C5n58jzSwSn/" />} />
           {/* notfound */}
           <Route path="*" element={<div>NotFound</div>} />
         </Routes>
