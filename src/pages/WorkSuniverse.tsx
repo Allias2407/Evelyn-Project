@@ -87,7 +87,7 @@ const WorkSuniverse = ({ url }: InstagramEmbedProps) => {
             ))}
           </div>
 
-          <div className="mx-auto max-w-6xl mt-8 px-4 sm:px-6 lg:px-10">
+          <div className=" mb-25 mx-auto max-w-6xl mt-8 px-4 sm:px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
               {/* Instagram Reel */}
               <div className="w-full">
@@ -100,7 +100,7 @@ const WorkSuniverse = ({ url }: InstagramEmbedProps) => {
               </div>
 
               {/* 2 Images */}
-              <div className="mb-15 grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {[suniverse7, suniverse8].map((src, i) => (
                   <div key={i} className="overflow-hidden border">
                     <img
