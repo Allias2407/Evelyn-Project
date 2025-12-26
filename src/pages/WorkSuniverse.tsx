@@ -100,7 +100,7 @@ const WorkSuniverse = ({ url }: InstagramEmbedProps) => {
               </div>
 
               {/* 2 Images */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="mb-15 grid grid-cols-2 gap-4">
                 {[suniverse7, suniverse8].map((src, i) => (
                   <div key={i} className="overflow-hidden border">
                     <img
