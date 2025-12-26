@@ -9,7 +9,7 @@ import WorkSuniverse from "./pages/WorkSuniverse";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Evelyn-Project/">
         <Routes>
           <Route index path="/Evelyn-Project/" element={<Home />} />
           <Route path="/Evelyn-Project/about" element={<About />} />

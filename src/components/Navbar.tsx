@@ -7,21 +7,22 @@ import {
   ChevronsLeft,
   ChevronDown,
 } from "lucide-react";
+import {Link} from 'react-router-dom';
 
 const navItems = [
   {
     name: "Home",
-    link: "/Evelyn-Project/",
+    link: "",
     icon: <House className="inline mb-1" />,
   },
   {
     name: "About",
-    link: "/Evelyn-Project/about",
+    link: "about",
     icon: <UserRoundSearch className="inline mb-1" />,
   },
   {
     name: "Work Overview",
-    link: "/Evelyn-Project/work",
+    link: "work",
     icon: <BriefcaseBusiness className="inline mb-1" />,
   },
   {
@@ -32,12 +33,12 @@ const navItems = [
 ];
 
 const workSubNavItems = [
-  { name: "Rebirth Project", link: "/Evelyn-Project/rebirth-project" },
+  { name: "Rebirth Project", link: "rebirth-project" },
   {
     name: "RMIT Vietnam Student Council Hanoi",
-    link: "/Evelyn-Project/schnoi",
+    link: "schnoi",
   },
-  { name: "Suniverse", link: "/Evelyn-Project/suniverse" },
+  { name: "Suniverse", link: "suniverse" },
 ];
 
 export default function Navbar() {
@@ -148,14 +149,14 @@ useEffect(() => {
                         const subActive = isActive(sub.link);
                         
                         return (
-                        <a
+                        <Link
                           key={sub.name}
-                          href={sub.link}
+                          to={sub.link}
                           onClick={() => setCollapsed(false)}
                           className={`hover:text-[#C52323] transition-colors ${subActive ? "text-[#C52323] font-extrabold" : "text-primary"}`}
                         >
                           {sub.name}
-                        </a>
+                        </Link>
                       )})}
                     </div>
                   </div>
@@ -221,9 +222,9 @@ useEffect(() => {
                         {workSubNavItems.map((sub) => {
                           const subActive = isActive(sub.link);
                           return (
-                            <a
+                            <Link
                               key={sub.name}
-                              href={sub.link}
+                              to={sub.link}
                               onClick={() => setProjectsOpen(false)}
                               className={[
                                 "rounded-md px-3 py-2 text-sm transition-colors",
@@ -232,7 +233,7 @@ useEffect(() => {
                               ].join(" ")}
                             >
                               {sub.name}
-                            </a>
+                            </Link>
                           );
                         })}
                       </div>
@@ -243,9 +244,9 @@ useEffect(() => {
             }
 
             return (
-              <a
+              <Link
                 key={item.name}
-                href={item.link}
+                to={item.link}
                 className={[
                   "flex flex-col items-center justify-center px-4 py-2 rounded-md",
                   isActive(item.link) ? "text-[#C52323] font-bold" : "text-primary",
@@ -253,7 +254,7 @@ useEffect(() => {
               >
                 {item.icon}
                 <span className="text-[11px] mt-1">{item.name}</span>
-              </a>
+              </Link>
             );
           })}
         </nav>
