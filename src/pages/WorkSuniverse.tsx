@@ -67,62 +67,51 @@ const WorkSuniverse = ({ url }: InstagramEmbedProps) => {
             </p>
           </div>
 
-          <div className="w-full mt-5 px-15 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-            <img
-              src={suniverse1}
-              alt="suniverse 1"
-              className="w-full h-auto object-cover rounded"
-            />
-            <img
-              src={suniverse2}
-              alt="suniverse 2"
-              className="w-full h-auto object-cover rounded"
-            />
-            <img
-              src={suniverse3}
-              alt="suniverse 3"
-              className="w-full h-auto object-cover rounded"
-            />
-            <img
-              src={suniverse4}
-              alt="suniverse 4"
-              className="w-full h-auto object-cover rounded"
-            />
-            <img
-              src={suniverse5}
-              alt="suniverse 5"
-              className="w-full h-auto object-cover rounded"
-            />
-            <img
-              src={suniverse6}
-              alt="suniverse 6"
-              className="w-full h-auto object-cover rounded"
-            />
+          <div className="mx-auto w-full h-auto mt-5 px-4 sm:px-6 lg:px-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              suniverse1,
+              suniverse2,
+              suniverse3,
+              suniverse4,
+              suniverse5,
+              suniverse6,
+            ].map((src, i) => (
+              <div key={i} className="overflow-hidden border">
+                <img
+                  src={src}
+                  alt={`suniverse ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="w-full mt-5 flex justify-center items-center gap-6">
-            {/* Instagram Reel */}
-            <div className="w-full max-w-90 sm:max-w-105">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-                style={{ width: "100%", margin: 0 }}
-              />
-            </div>
+          <div className="mx-auto max-w-6xl mt-8 px-4 sm:px-6 lg:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+              {/* Instagram Reel */}
+              <div className="w-full">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink={url}
+                  data-instgrm-version="14"
+                  style={{ width: "100%", margin: 0 }}
+                />
+              </div>
 
-            {/* Image grid – same width as video */}
-            <div className="w-full ax-w-90 sm:max-w-105 grid grid-cols-2 gap-3">
-              <img
-                src={suniverse7}
-                alt="suniverse 7"
-                className="w-full object-cover rounded-lg"
-              />
-              <img
-                src={suniverse8}
-                alt="suniverse 8"
-                className="w-full object-cover rounded-lg"
-              />
+              {/* 2 Images */}
+              <div className="grid grid-cols-2 gap-4">
+                {[suniverse7, suniverse8].map((src, i) => (
+                  <div key={i} className="overflow-hidden border">
+                    <img
+                      src={src}
+                      alt={`suniverse ${7 + i}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

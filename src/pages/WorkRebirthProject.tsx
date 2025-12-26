@@ -18,9 +18,10 @@ const WorkRebirthProject = () => {
           </h1>
           <div className="max-w-4xl mx-auto px-10 text-[1.1rem]">
             <p className="text-rebirth-primary mb-5">
-              <b className="font-serif">'Rebirth' Photoshoot</b> is a photoshoot project created for my
-              friend’s fashion design portfolio. I was in charge of concept
-              development, production, modelling, and photo editing.
+              <b className="font-serif">'Rebirth' Photoshoot</b> is a photoshoot
+              project created for my friend’s fashion design portfolio. I was in
+              charge of concept development, production, modelling, and photo
+              editing.
             </p>
             <p className="text-rebirth-primary mb-5">
               The creative concept I developed was{" "}
@@ -42,11 +43,16 @@ const WorkRebirthProject = () => {
               London College for Design & Fashion (LCDF Hanoi).
             </p>
           </div>
-          <div className="px-30 py-10 flex flex-col gap-3 justify-center items-center">
-            <img src={rebirth1} alt="evelyn's image" />
-            <img src={rebirth2} alt="evelyn's image" />
-            <img src={rebirth3} alt="evelyn's image" />
-            <img src={rebirth4} alt="evelyn's image" />
+          <div className="mx-auto max-w-5xl px-4 mb-15 sm:px-6 lg:px-10 py-10 space-y-4 sm:space-y-6">
+            {[rebirth1, rebirth2, rebirth3, rebirth4].map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`rebirth-${i + 1}`}
+                className="w-full rounded-2xl border shadow-sm object-cover"
+                loading="lazy"
+              />
+            ))}
           </div>
         </div>
       </div>
