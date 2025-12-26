@@ -8,6 +8,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import {Link} from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const navItems = [
   {
@@ -45,7 +46,7 @@ export default function Navbar() {
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   
-  const pathname = window.location.pathname;
+  const { pathname } = useLocation();
   const isActive = (link: string) =>
     pathname === link || pathname.startsWith(link + "/");
   const isProjectsActive = workSubNavItems.some((s) => isActive(s.link));

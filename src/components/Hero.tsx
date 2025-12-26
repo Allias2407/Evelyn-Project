@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import {Link} from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -12,7 +13,7 @@ const Hero = () => {
       </p>
 
       <div className="flex flex-col md:flex-row gap-4 justify-center mt-6 opacity-0 animate-fade-in-delay-3">
-        <a
+        <Link
           style={{ borderColor: "rgba(255,255,255,0.9)" }}
           className="border
   rounded-[0.3125rem]
@@ -24,11 +25,11 @@ const Hero = () => {
   px-7.5
   uppercase
   button-hover"
-          href="/Evelyn-Project/about"
+          to="/about"
         >
           ABOUT ME
-        </a>
-        <a
+        </Link>
+        <Link
           style={{ borderColor: "rgba(255,255,255,0.9)" }}
           className="border
   rounded-[0.3125rem]
@@ -40,10 +41,10 @@ const Hero = () => {
   px-7.5
   uppercase
   button-hover"
-          href="/Evelyn-Project/work"
+          to="/work"
         >
           MY WORK
-        </a>
+        </Link>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce ">
