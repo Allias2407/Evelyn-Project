@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
+  --color-border: var(--border);
+  --color-background: var(--background);
   --color-foreground: hsl(var(--foreground));
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-rebirth-primary: var(--rebirth-primary);
+  --color-sc-primary: var(--sc-primary);
+  --color-bg-btn-sc: var(--bg-btn-sc);
+  --color-text-btn-sc: var(--text-btn-sc);
+  --color-btn-sc-hover: var(--hover-btn-sc);
+  --color-text-sc-hover: var(--hover-text-sc);
 
   --color-card: hsl(var(--card));
 
@@ -14,10 +20,9 @@
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.45 forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.45s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -54,27 +59,41 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: #fffdf2;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
+    --navcard: 15, 23, 42;
+    --rebirth-primary: #857276;
+    --sc-primary: #154b88;
+    --bg-btn-sc: #233f6f;
+    --text-btn-sc: #fffdf2;
+    --hover-btn-sc: #e7625b;
+    --hover-text-sc: #FFF226;
 
     --primary: 222 47% 11%;
     --primary-foreground: 210 40% 98%;
 
-    --border: 210 40% 90%;
+    --border: #0f172a;
   }
 
   .dark {
-    --background: 222 47% 4%;
+    --background: #0f172a;
     --foreground: 210 40% 98%;
 
     --card: 222 47% 6%;
+    --navcard: 255, 253, 242;
+    --rebirth-primary: #fffdf2;
+    --sc-primary: #fffdf2; 
+    --bg-btn-sc: #e7625b;
+    --text-btn-sc: #FFF226;
+    --hover-btn-sc: #233f6f;
+    --hover-text-sc: #fffdf2;
 
     --primary: 210 40% 98%;
     --primary-foreground: 222 47% 4%;
 
-    --border: 222 47% 12%;
+    --border: #fffdf2;
   }
 }
 
@@ -118,28 +137,16 @@ body {
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover::shadow-lg;
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(var(--navcard),0.35)];
 }
 
-@utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
-}
-
-@utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,91,246,0.5)] hover:scale-105 active:scale-95;
-}
-
-@utility star {
-  @apply absolute bg-white rounded-full;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-}
-
-@utility meteor {
-  @apply absolute bg-linear-to-r from-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+@utility button-hover {
+  @apply transition-all duration-200 ease-out
+    hover:bg-[#fffdf2]
+    hover:text-[#C52323]
+    hover:border-[#fffdf2]
+    active:scale-[0.97]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white;
 }
 
 #root {
